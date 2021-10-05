@@ -1,0 +1,24 @@
+<form id="log_in" (submit)="sendForm()">
+  <span id="title">Log in</span>
+  <div id="inputs">
+    <div id="email">
+      <label for="email">{{ email.getError() }}</label>
+      <div class="input {{ email.error == '' ? 'valid' : 'invalid' }}">
+        <input type="email" name="email" placeholder="Your email" class="form-control" autocomplete="username" [(ngModel)]="email.value">
+        <div routerLink="/sign_up" class="redirect"><span>Don't have an account?</span></div>
+      </div>
+    </div>
+    <div id="password">
+      <label for="password">{{ password.getError() }}</label>
+      <div class="input {{ password.error == '' ? 'valid' : 'invalid' }}">
+        <input type="password" name="password" placeholder="Your password" class="form-control" autocomplete="current-password" [(ngModel)]="password.value">
+        <div routerLink="/log_in" class="redirect"><span>Forgot password?</span></div>
+      </div>
+    </div>
+    <div id="remember_me">
+      <label for="remember_me">{{ remember_me ? 'Remember me for 3 days' : 'Expire in 1 hour' }}</label>
+      <input type="checkbox" name="remember_me" [(ngModel)]="remember_me">
+    </div>
+  </div>
+  <input id="submit" type="submit" value="Log In" class="form-control">
+</form>

@@ -1,0 +1,46 @@
+<div id="decades">
+  <div id="decades_header">
+    <div id="decades_title">
+      <span>Trends through the decades</span>
+      <br>
+      <span id="years_link">
+        See also: <span routerLink="/trends/years">Trends through years</span>
+      </span>
+    </div>
+    <select id="decades_links" (change)="navigateTo($event);" [(ngModel)]="decade.decade">
+      <option
+        class="decades_link"
+        [ngValue]="decade"
+        *ngFor="let decade of decades">
+        {{ decade }}
+      </option>
+    </select>
+  </div>
+  <div id="decades_content">
+    <div id="decade_text">
+      <span>Trend colors in {{ decade.decade }}s</span>
+      <div id="decade_content">
+        <span>{{ decade.description }}</span>
+        <div id="decade_colors">
+          <div
+            class="color"
+            (mouseover)="show(i)"
+            (mouseout)="hide(i)"
+            *ngFor="let color of decade.colors; let i = index">
+            <div
+              class="color-value"
+              [ngStyle]="{
+                'color': color.getShade(),
+                'background-color': color.hex.toString()
+              }">
+              <span class="text-hidden">{{ decade.names[i] }}</span>
+              <span class="text-hidden">{{ color.hex.toString() }}</span>
+            </div>
+            <div class="color-shade shade-hidden"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="../../../assets/{{ decade.decade }}_trends.jpg">
+  </div>
+</div>

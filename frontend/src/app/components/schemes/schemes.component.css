@@ -1,0 +1,72 @@
+#schemes {
+  margin: 2.5vh 2.5vw;
+  padding: 2.5vh 0 2.5vh 2.5vw;
+  min-height: 74vh;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#schemes_header {
+  display: flex;
+  justify-content: space-between;
+  width: 85vw;
+  height: auto;
+}
+
+#schemes_title {
+  font-size: 24px;
+}
+
+#schemes_options {
+  width: 12vw;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  font-size: 24px;
+  padding: 1vh 0.25vw;
+  transition: 0.5s;
+}
+
+.schemes_option {
+  font-size: 20px;
+  background-color: whitesmoke;
+  color: black;
+}
+
+#scheme {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-content: center;
+  width: 85vw;
+  margin-top: 5vh;
+}
+
+#scheme_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10vh;
+  width: 50vw;
+  font-size: 24px;
+}
+
+#cursor_values {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: start;
+  align-content: center;
+}
+
+.cursor-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vw;
+  height: 5vw;
+}
+
+.cursor-value span {
+  font-size: 20px;
+}

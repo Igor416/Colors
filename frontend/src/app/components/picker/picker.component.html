@@ -1,0 +1,93 @@
+<div id="picker">
+  <div id="picker_header">
+    <span id="picker_title">{{ picked_model.name | uppercase }} ({{ picked_model.fullName }}) Picker</span>
+    <select id="picker_options" [(ngModel)]="picked_model">
+      <option
+        class="picker_option"
+        [ngValue]="getModelByName(model)"
+        *ngFor="let model of picked_color.models">
+        {{ model }}
+      </option>
+    </select>
+  </div>
+  <div id="picker_representer">
+    <div
+      id="picked_color"
+      [ngStyle]="{ 'background-color': representColor() }">
+      <button
+        id="invert_picked_color"
+        (click)="invertColor()"
+        [ngStyle]="{ 'color': getInvertedColor() }">invert
+      </button>
+    </div>
+    <div id="picked_color_models">
+      <div
+        class="picked_color_model {{ picked_model.name == model ? 'active' : '' }}"
+        *ngFor="let model of getModelsOrder()">
+        <div *ngIf="model == 'hex'; then Text else Number"></div>
+        <ng-template #Text>
+          <div
+            class="picked_color_field"
+            *ngFor="let field of getModelByName('hex').fields">
+            <span class="picker_chooser_label">{{ field.name }}: &nbsp;</span>
+            <input
+              type="text"
+              [(ngModel)]="getFieldByName('hex', field.get()).value">
+          </div>
+        </ng-template>
+        <ng-template #Number>
+          <div
+            class="picked_color_field"
+            *ngFor="let field of getModelByName(model).fields">
+            <span class="picker_chooser_label">{{ field.name }}: &nbsp;</span>
+            <input
+              type="number"
+              min="{{ getFieldByName(model, field.get()).min }}"
+              max="{{ getFieldByName(model, field.get()).max }}"
+              [(ngModel)]="getFieldByName(model, field.get()).value">
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div id="picker_chooser">
+    <div
+      class="picker_chooser_model"
+      [ngStyle]="{'display': picked_model.name == model ? 'flex' : 'none' }"
+      *ngFor="let model of picked_color.models">
+      <div *ngIf="model == 'hex'; then Text else Number"></div>
+      <ng-template #Text>
+        <div
+          class="picker_chooser_field"
+          *ngFor="let field of getModelByName('rgb').fields">
+          <span class="picker_chooser_label">{{ field.name }}: &nbsp;</span>
+          <div
+            class="picker_chooser_gradient"
+            [ngStyle]="{'background': getModelByName('rgb').getGradient(field.get())}">
+          </div>
+          <input
+            type="range"
+            min="{{ getFieldByName('rgb', field.get()).min }}"
+            max="{{ getFieldByName('rgb', field.get()).max }}"
+            [(ngModel)]="getFieldByName('rgb', field.get()).value">
+        </div>
+      </ng-template>
+      <ng-template #Number>
+        <div
+          class="picker_chooser_field"
+          *ngFor="let field of getModelByName(model).fields">
+          <span class="picker_chooser_label">{{ field.name }}: &nbsp;</span>
+          <div
+            class="picker_chooser_gradient"
+            [ngStyle]="{'background': getModelByName(model).getGradient(field.get())}">
+          </div>
+          <input
+          type="range"
+          min="{{ getFieldByName(model, field.get()).min }}"
+          max="{{ getFieldByName(model, field.get()).max }}"
+          [(ngModel)]="getFieldByName(model, field.get()).value">
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

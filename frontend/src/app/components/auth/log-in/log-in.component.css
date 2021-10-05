@@ -1,0 +1,92 @@
+#log_in {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 2.5vh 25vw;
+  padding: 5vh 5vw;
+  min-height: 74vh;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#title {
+  font-size: 44px;
+  margin-bottom: 10vh;
+}
+
+#inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+  margin-bottom: 10vh;
+}
+
+#inputs div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.5vh;
+  font-size: 20px;
+  width: 15vw;
+}
+
+.valid::after {
+  position: absolute;
+  content: "\2713";
+  margin-left: calc(15vw - 24px);
+  position: absolute;
+  font-size: 24px;
+  color: var(--bs-green);
+}
+
+.invalid::after {
+  position: absolute;
+  content: "\2715";
+  margin-left: calc(15vw - 24px);
+  position: absolute;
+  font-size: 24px;
+  color: var(--bs-red);
+}
+
+label {
+  color: var(--bs-danger);
+  font-size: 18px;
+}
+
+.redirect span {
+  color: var(--bs-primary);
+  font-size: 16px;
+}
+
+.redirect:hover {
+  cursor: pointer;
+}
+
+#remember_me {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row !important;
+  width: 15vw !important;
+}
+
+#remember_me input {
+  transform: scale(1.5);
+}
+
+#remember_me label {
+  color: black;
+}
+
+#submit {
+  font-size: 28px;
+  width: 10vw;
+  transition: 0.5s;
+}
+
+#submit:hover {
+  transform: scale(1.25);
+  color: var(--bs-primary);
+}

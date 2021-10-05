@@ -1,0 +1,133 @@
+#decades {
+  margin: 2.5vh 2.5vw;
+  padding: 2.5vh 0 2.5vh 2.5vw;
+  min-height: 74vh;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#decades_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85vw;
+  height: auto;
+  font-size: 28px;
+}
+
+#years_link {
+  font-size: 24px;
+}
+
+#years_link span {
+  transition: 0.5s;
+}
+
+#years_link span:hover {
+  cursor: pointer;
+  color: var(--bs-primary);
+}
+
+
+#decades_links {
+  width: 12vw;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  font-size: 24px;
+  padding-bottom: 0.5vh;
+  transition: 0.5s;
+}
+
+.decades_link {
+  font-size: 20px;
+  background-color: whitesmoke;
+  color: black;
+}
+
+#decades_content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 85vw;
+  margin-top: 5vh;
+  font-size: 24px;
+}
+
+#decade_text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: space-between;
+  width: 50vw;
+}
+
+#decade_content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 50vw;
+  margin-top: 2.5vh;
+}
+
+#decade_content span {
+  white-space: pre-line;
+}
+
+#decade_colors {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  width: 50vw;
+  margin-top: 10vh;
+}
+
+.color {
+  width: calc(50vw / 6);
+  height: 50vh;
+}
+
+.color-value {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 5vh 0;
+  text-align: center;
+  width: inherit;
+  height: 50vh;
+  font-size: 20px;
+}
+
+.color-value span {
+  transition: 0.5s;
+}
+
+.text-showen {
+  opacity: 1;
+}
+
+.text-hidden {
+  opacity: 0;
+}
+
+.color-shade {
+  z-index: 1;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: inherit;
+  transition: 0.5s;
+}
+
+.shade-showen {
+  height: 0%;
+}
+
+.shade-hidden {
+  height: 50%;
+}
+
+#decades_content img {
+  width: 30vw;
+}

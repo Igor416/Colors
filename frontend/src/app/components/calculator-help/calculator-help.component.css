@@ -1,0 +1,112 @@
+#calculator-help {
+  margin: 2.5vh 2.5vw;
+  padding: 2.5vh 0 2.5vh 2.5vw;
+  min-height: 74vh;
+  font-size: 22px;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#heading {
+  font-size: 42px;
+}
+
+.operation-name {
+  font-size: 26px;
+  font-size: bold;
+}
+
+#operation-guides {
+  font-size: 28px;
+}
+
+.operation-guide {
+  font-size: 20px;
+  font-size: bold;
+}
+
+.operation-guide span {
+  font-size: 32px;
+  font-size: bold;
+}
+
+.equation-example {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  padding: 2vw 2vh;
+}
+
+.operation-example {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  width: 15vh;
+  height: 15vh;
+}
+
+.operation-color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+}
+
+.operation-example input {
+  font-size: 24px;
+  background-color: whitesmoke;
+  outline: none;
+  border: none;
+  width: 12vh;
+  border-bottom: 1px solid black;
+}
+
+.sign {
+  height: 15vh;
+  width: 15vh;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+  font-size: 15vh;
+  line-height: 7vh;
+  text-align: center;
+}
+
+.mix {
+  font-size: 10vh;
+  line-height: 9vh;
+}
+
+.plus::before {
+  content: "+";
+}
+
+.minus::before {
+  content: "-";
+}
+
+.mix::before {
+  content: "&";
+}
+
+.equals::before {
+  content: "=";
+}
+
+#back {
+  z-index: 1;
+  position: fixed;
+  padding: 0.5vw;
+  border-radius: 50%;
+  transition: 0.5s;
+  right: 5.5vw;
+  bottom: 5.5vh;
+}
+
+#back:hover {
+  color: var(--bs-primary);
+}

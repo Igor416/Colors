@@ -1,0 +1,62 @@
+<div id="calculator">
+  <div id="equation">
+    <div
+      class="{{ element.length == 7 ? 'hex_color' : 'sign ' + this.equation.signes[(i - 1) / 2] }}"
+      (click)="element.length == 7 ? '' : pickedSignId = (i - 1) / 2"
+      *ngFor="let element of this.equation.row; let i = index">
+      <div *ngIf="element.length == 7; then Color else Sign"></div>
+      <ng-template #Color>
+        <div
+          class="color"
+          [ngStyle]="{ 'background-color': this.equation.colors[i / 2].hex.toString() }">
+          <button
+            class="invert_picked_color"
+            (click)="invertColor(i / 2)"
+            [ngStyle]="{ 'color': getInvertedColor(i / 2) }">invert
+          </button>
+        </div>
+        <input type="text" [(ngModel)]="this.equation.hexs[i / 2]">
+      </ng-template>
+      <ng-template #Sign></ng-template>
+    </div>
+    <div class="element sign equals"></div>
+    <div class="result">
+      <div
+        class="color"
+        [ngStyle]="{ 'background-color': getResult() }">
+      </div>
+      <input disabled type="text" value="{{ getResult() }}">
+    </div>
+  </div>
+  <div id="buttons">
+    <div id="sign_buttons">
+      <div id="choosen_sign">
+        <div class="sign {{ getPickedSign() }}"></div>
+      </div>
+      <div id="change-sign_buttons">
+        <div class="sign plus" (click)="changeSign('plus')"></div>
+        <div class="sign minus" (click)="changeSign('minus')"></div>
+        <div class="sign mix" (click)="changeSign('mix')"></div>
+      </div>
+    </div>
+    <div id="global_buttons">
+      <button id="clear_button" (click)="clear()">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+        <span>&nbsp; clear</span>
+      </button>
+      <button id="add_button" (click)="add()">
+        <i class="fas fa-plus"></i>
+        <span>&nbsp; add</span>
+      </button>
+      <button id="remove_button" (click)="remove()">
+        <i class="fas fa-minus"></i>
+        <span>&nbsp; remove</span>
+      </button>
+    </div>
+  </div>
+  <div
+    id="help"
+    routerLink="help">
+    <i class="fas fa-question"></i>
+  </div>
+</div>

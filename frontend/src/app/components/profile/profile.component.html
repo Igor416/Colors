@@ -1,0 +1,103 @@
+<div id="profile">
+  <div id="profile_info">
+    <div>
+      <div id="profile_logo">
+        <img src="../../../assets/avatar.png" alt="avatar">
+      </div>
+      <div id="profile_data">
+        <div *ngIf="editing; then Edit else Data"></div>
+        <ng-template #Data>
+          <span>Welcome {{ login.value }}</span>
+          <span>Your email: {{ email.value }}</span>
+          <div *ngIf="active[2]; then ColorEdit else None"></div>
+          <ng-template #ColorEdit>
+            <br>
+            <span>Edit: </span>
+            <form>
+              <input (input)="modifyColorOrCategory()" type="text" name="current" placeholder="Current" class="form-control" [(ngModel)]="current">
+            </form>
+          </ng-template>
+          <ng-template #None>
+          </ng-template>
+        </ng-template>
+        <ng-template #Edit>
+          <div id="login">
+            <label for="login">{{ login.getError() }}</label>
+            <div class="input {{ login.error == '' ? 'valid' : 'invalid' }}">
+              <input type="text" name="login" placeholder="Your login" class="form-control" [(ngModel)]="login.value">
+            </div>
+          </div>
+          <div id="email">
+            <label for="email">{{ email.getError() }}</label>
+            <div class="input {{ email.error == '' ? 'valid' : 'invalid' }}">
+              <input type="text" name="email" placeholder="Your login" class="form-control" [(ngModel)]="email.value">
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div id="edit_buttons" class="{{ editing ? 'editing' : '' }}">
+      <input [ngStyle]="{ 'display': editing ? 'block' : 'none' }" (click)="discard()" class="form-control sumbit" type="submit" value="{{ editing ? 'Discard' : '' }}">
+      <input (click)="save()" class="form-control sumbit" type="submit" value="{{ editing ? 'Save' : 'Edit' }}">
+    </div>
+  </div>
+  <div id="profile_content">
+    <span>Your color pallettes. You can add colors from through all the site.</span>
+    <div id="profile_colors">
+      <div class="category" *ngFor="let category of categories; let i = index">
+        <div class="category-info">
+          <span
+            class="category-name"
+            (click)="
+              active = [i, -1, active[2], false];
+              current = category.name">
+            {{ category.name }}: &nbsp;&nbsp;&nbsp;
+          </span>
+          <span
+            class="category-icons"
+            [ngStyle]="{ 'opacity': isActive('category', i) ? '1' : '0' }">
+            <span (click)="addColor();active[3]=true;active[3]=true">
+              <i class="fa fa-plus"></i>
+            </span>
+            &nbsp;
+            <span (click)="deleteColorOrCategory('category')">
+              <i class="fa fa-trash"></i>
+            </span>
+            &nbsp;
+            <span (click)="saveCategories();active[2] = !active[2];">
+              <i class="fas {{ active[2] ? 'fa-save' : 'fa-edit'}}"></i>
+            </span>
+          </span>
+        </div>
+        <div class="colors">
+          <div
+            (click)="
+              active = [i, j, active[2], true];
+              current = color.hex.toString()"
+            class="color"
+            [ngStyle]="{
+              'padding-bottom': isActive('color', i, j) ? '2vh' : '0vh',
+              'background-color': color.hex.toString(),
+              'color': color.getShade()
+            }"
+            *ngFor="let color of category.colors; let j = index">
+            <span>{{ color.hex.toString() }}</span>
+            <div [ngStyle]="{ 'opacity': isActive('color', i, j) ? '1' : '0' }">
+              <span (click)="deleteColorOrCategory('color')">
+                <i class="fa fa-trash"></i>
+              </span>
+              <span (click)="saveCategories();active[2] = !active[2];">
+                <i class="fas {{ active[2] ? 'fa-save' : 'fa-edit'}}"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="add_category">
+        <div (click)="addCategory()">
+          <i class="fa fa-plus"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

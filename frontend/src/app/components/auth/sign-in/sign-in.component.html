@@ -1,0 +1,35 @@
+<form id="sign_in" (submit)="sendForm($event)">
+  <span id="title">Register</span>
+  <div id="inputs">
+    <div id="name">
+      <label for="name">{{ name.getError() }}</label>
+      <div class="input {{ name.error == '' ? 'valid' : 'invalid' }}">
+        <input type="text" name="name" placeholder="Make up a login" class="form-control" [(ngModel)]="name.value">
+      </div>
+    </div>
+    <div id="email">
+      <label for="email">{{ email.getError() }}</label>
+      <div class="input {{ email.error == '' ? 'valid' : 'invalid' }}">
+        <input type="email" name="email" placeholder="Your email" class="form-control" autocomplete="username" [(ngModel)]="email.value">
+        <div routerLink="/log_in" class="redirect"><span>Already have an account?</span></div>
+      </div>
+    </div>
+    <div id="password">
+      <label for="password">{{ password.getError() }}</label>
+      <div class="input {{ password.error == '' ? 'valid' : 'invalid' }}">
+        <input type="password" name="password" placeholder="Make up a password" class="form-control" autocomplete="new-password" [(ngModel)]="password.value">
+      </div>
+    </div>
+    <div id="password2">
+      <label for="password2">{{ password2.getError() }}</label>
+      <div class="input {{ password2.error == '' ? 'valid' : 'invalid' }}">
+        <input type="password" name="password2" placeholder="Type in your password" class="form-control" autocomplete="new-password" [(ngModel)]="password2.value">
+      </div>
+    </div>
+    <div id="remember_me">
+      <label for="remember_me">{{ remember_me ? 'Remember me for 3 days' : 'Expire in 1 hour' }}</label>
+      <input type="checkbox" name="remember_me" [(ngModel)]="remember_me">
+    </div>
+  </div>
+  <input id="submit" type="submit" value="Sign Up" class="form-control">
+</form>

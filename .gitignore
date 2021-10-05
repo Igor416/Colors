@@ -1,0 +1,6 @@
+backend/backend/.env
+backend/**/__pycache__/
+backend/**/migrations/
+backend/db.sqlite3
+frontend/node_modules/
+frontend/src/assets/

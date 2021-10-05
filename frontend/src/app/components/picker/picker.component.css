@@ -1,0 +1,146 @@
+#picker {
+  margin: 2.5vh 2.5vw;
+  padding: 2.5vh 2.5vw;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#picker_header {
+  display: flex;
+  justify-content: space-between;
+  width: 85vw;
+  height: auto;
+}
+
+#picker_title {
+  font-size: 24px;
+}
+
+#picker_options {
+  width: 10vw;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  border-bottom: 1px solid black;
+  padding: 1vh 0.25vw;
+  transition: 0.5s;
+}
+
+.picker_option {
+  font-size: 20px;
+  background-color: whitesmoke;
+  color: black;
+}
+
+#picker_representer {
+  padding: 5vh 0 0 0;
+  width: 85vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+#picked_color_wrapper {
+  border-radius: 50%;
+  width: 16vw;
+  height: 16vw;
+  padding: 0.5vw;
+}
+
+#picked_color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 15vw;
+  height: 15vw;
+}
+
+#invert_picked_color {
+  margin-top: -2vh;
+  width: 5vw;
+  height: 4vh;
+  font-size: 36px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+#picked_color_models {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-end;
+  padding: 1vh 1vw;
+  width: 50vw;
+  font-size: 20px;
+}
+
+#picked_color_models .active {
+  font-size: 24px;
+}
+
+.picked_color_model {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.picked_color_field {
+  width: 8vw;
+  margin-left: 4vw;
+}
+
+.picked_color_field:first-child {
+  margin-left: 0;
+}
+
+.picked_color_field input {
+  background-color: whitesmoke;
+  width: 4vw;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+#picker_chooser {
+  padding: 5vh 0 0 0;
+  width: 85vw;
+}
+
+.picker_chooser_model {
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+}
+
+.picker_chooser_field {
+  width: 85vw;
+}
+
+.picker_chooser_gradient {
+  width: 85vw;
+  height: 1.5vh;
+  border-radius: 10%;
+}
+
+.picker_chooser_field span {
+  font-size: 20px;
+}
+
+.picker_chooser_field input {
+  width: 85vw;
+}
+
+#help {
+  position: absolute;
+  z-index: 1;
+  right: 5.5vw;
+  top: 22vh;
+  padding: 0.5vw;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+#help:hover {
+  background-color: #ccc;
+}

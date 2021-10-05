@@ -1,0 +1,36 @@
+<div id="schemes">
+  <div id="schemes_header">
+    <span id="schemes_title">{{ scheme.constructor.name }} Scheme</span>
+    <select id="schemes_options" (change)="navigateTo($event);" [(ngModel)]="picked_scheme">
+      <option
+        class="schemes_option"
+        [ngValue]="scheme"
+        *ngFor="let scheme of schemes">
+        {{ scheme }}
+      </option>
+    </select>
+  </div>
+  <div id="scheme">
+    <div id="canvas_container"></div>
+    <div id="scheme_info">
+      <div id="description">
+        {{ scheme.description }}
+      </div>
+      <div id="cursor_values">
+        <div
+          class="cursor-value"
+          (click)="colors_shown = !colors_shown"
+          [ngStyle]="{ 'background-color': info.color.hex.toString() }"
+          *ngFor="let info of getCursorsInfo()">
+          <div *ngIf="colors_shown; then Color else Id"></div>
+          <ng-template #Color>
+            <span>{{ info.label == '' ? '' : info.color.hex.toString() }}</span>
+          </ng-template>
+          <ng-template #Id>
+            <span>{{ info.label }}</span>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

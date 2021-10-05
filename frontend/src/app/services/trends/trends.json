@@ -1,0 +1,210 @@
+{
+  "years": [
+    {
+        "name": "Cerulean",
+        "hex": "#9dd7d4",
+        "pantone": "15-4020",
+        "year": "2000"
+    },
+    {
+        "name": "Fuchsia Rose",
+        "hex": "#c74375",
+        "pantone": "17-2031",
+        "year": "2001"
+    },
+    {
+        "name": "True Red",
+        "hex": "#bf1932",
+        "pantone": "19-1664",
+        "year": "2002"
+    },
+    {
+        "name": "Aqua Sky",
+        "hex": "#7bc4c4",
+        "pantone": "14-4811",
+        "year": "2003"
+    },
+    {
+        "name": "Tigerlily",
+        "hex": "#e2583e",
+        "pantone": "17-1456",
+        "year": "2004"
+    },
+    {
+        "name": "Blue Turquoise",
+        "hex": "#53b0ae",
+        "pantone": "15-5217",
+        "year": "2005"
+    },
+    {
+        "name": "Sand Dollar",
+        "hex": "#decdbe",
+        "pantone": "13-1106",
+        "year": "2006"
+    },
+    {
+        "name": "Chili Pepper",
+        "hex": "#9b1b30",
+        "pantone": "19-1557",
+        "year": "2007"
+    },
+    {
+        "name": "Blue Iris",
+        "hex": "#5a5b9f",
+        "pantone": "18-3943",
+        "year": "2008"
+    },
+    {
+        "name": "Mimosa",
+        "hex": "#f0c05a",
+        "pantone": "14-0848",
+        "year": "2009"
+    },
+    {
+        "name": "Turquoise",
+        "hex": "#45b5aa",
+        "pantone": "15-5519",
+        "year": "2010"
+    },
+    {
+        "name": "Honeysuckle",
+        "hex": "#d94f70",
+        "pantone": "18-2120",
+        "year": "2011"
+    },
+    {
+        "name": "Tangerine Tango",
+        "hex": "#dd4124",
+        "pantone": "17-1463",
+        "year": "2012"
+    },
+    {
+        "name": "Emerald",
+        "hex": "#009473",
+        "pantone": "17-5641",
+        "year": "2013"
+    },
+    {
+        "name": "Radiant Orchid",
+        "hex": "#b163a3",
+        "pantone": "18-3224",
+        "year": "2014"
+    },
+    {
+        "name": "Marsala",
+        "hex": "#955251",
+        "pantone": "18-1438",
+        "year": "2015"
+    },
+    {
+        "name": "Rose Quartz",
+        "hex": "#f7cac9",
+        "pantone": "13-1520",
+        "year": "2016"
+    },
+    {
+        "name": "Serenity",
+        "hex": "#92a8d1",
+        "pantone": "15-3919",
+        "year": "2016"
+    },
+    {
+        "name": "Greenery",
+        "hex": "#88b04b",
+        "pantone": "15-0343",
+        "year": "2017"
+    },
+    {
+        "name": "Ultra Violet",
+        "hex": "#5f4b8b",
+        "pantone": "18-3838",
+        "year": "2018"
+    },
+    {
+        "name": "Living Coral",
+        "hex": "#ff6f61",
+        "pantone": "16-1546",
+        "year": "2019"
+    },
+    {
+        "name": "Classic Blue",
+        "hex": "#0f4c81",
+        "pantone": "19-4052",
+        "year": "2020"
+    },
+    {
+        "name": "Ultimate Gray",
+        "hex": "#939597",
+        "pantone": "17-5104",
+        "year": "2021"
+    },
+    {
+        "name": "Illuminating",
+        "hex": "#f5dF4d",
+        "pantone": "13-0647",
+        "year": "2021'"
+    }
+  ],
+  "decades": [
+    {
+        "decade": "1920",
+        "hexs": ["#ffd84d", "#b0903d", "#f7e7ce", "#e30022", "#34399d", "#a5aaa0"],
+        "names": ["tuscan sun", "antique gold", "champagne", "cadmium red", "ultramarine", "deco silver"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "decade": "1930",
+        "hexs": ["#d02d1c", "#eed023", "#b0dabe", "#99b1c9", "#345d98", "#3a7359"],
+        "names": ["poppy field", "yellow brick road", "mint", "powder blue", "egyptian blue", "jade"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "decade": "1940",
+        "hexs": ["#2a326d", "#f4cf0d", "#d90707", "#4e9fbc", "#dabd8f", "#b38069"],
+        "names": ["war bond blue", "keep calm & canary on", "Rosie's nail polish", "air force blue", "normandy sand", "cadet khaki"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "decade": "1950",
+        "hexs": ["#ff91bb", "#ffd95c", "#4ac6d7", "#f5855b", "#68bbb8", "#e81b23"],
+        "names": ["poodle skirt", "lemon meringue", "roadtrip", "motel sunset", "soda fountain", "marilyn in crimson"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "decade": "1960",
+        "hexs": ["#cf4917", "#f9ac3d", "#758c33", "#985914", "#d0b285", "#2d758c"],
+        "names": ["burnt siena", "harvest gold", "avocado", "teak", "natural", "blue mustang"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "decade": "1970",
+        "hexs": ["#00a1d3", "#a92da3", "#fd4d2e", "#769f52", "#ff68a8", "#f8ca38"],
+        "names": ["prom suit", "wonka kitsch", "lava lamp glow", "faux fern", "neon dreams", "have a nice day"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "decade": "1980",
+        "hexs": ["#3968cb", "#ca7cd8", "#10e7e2", "#ff68a8", "#f9eb0f", "#ff2153"],
+        "names": ["acid wash", "purple rain", "tron turqoise", "miami", "pacman", "powersuit"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "decade": "1990",
+        "hexs": ["#b13a1a", "#832c76", "#164db0", "#287e9e", "#e4a834", "#b3346c"],
+        "names": ["oprah's couch", "tracksuit", "'I'm blue", "seattle spruce", "'Doh Dijon'", "moody mauve"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "decade": "2000",
+        "hexs": ["#df19c1", "#ff6200", "#efc40e", "#23d513", "#4399de", "#e33056"],
+        "names": ["Paris Hilton pink", "nickelodeon splat", "little miss sunshine", "limewire", "yes we cyan", "zenon ruby"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "decade": "2010",
+        "hexs": ["#efb6bf", "#c86e4c", "#dddddd", "#fe3c71", "#2bd566", "#0081fe"],
+        "names": ["millennial pink", "polished copper", "quartz", "one million likes", "suculent", "social bubble"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  ]
+}
