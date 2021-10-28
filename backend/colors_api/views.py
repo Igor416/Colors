@@ -2,6 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
 from .serializers import UserSerializer
+from django.core.mail import send_mail
+from random import randint
 from .models import User
 import datetime
 import hashlib
@@ -21,7 +23,7 @@ class RegisterView(APIView):
         except:
             raise ValidationError('Email is already registered!')
 
-        remeber = request.data['remember_me']
+        remember = request.data['remember_me']
         name = request.data['name']
         password = request.data['password']
         email = request.data['email']
@@ -38,7 +40,7 @@ class RegisterView(APIView):
 
         payload = {
             'id': user.id,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=remember_me[remeber]),
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=remember_me[remember]),
             'iat': datetime.datetime.utcnow()
         }
 
@@ -51,7 +53,6 @@ class RegisterView(APIView):
             'jwt': token
         }
         return response
-
 
 class LoginView(APIView):
     def post(self, request):
@@ -72,11 +73,11 @@ class LoginView(APIView):
         if user.password != h.hexdigest():
             raise ValidationError('Incorrect password!')
 
-        remeber = request.data['remember_me']
+        remember = request.data['remember_me']
 
         payload = {
             'id': user.id,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=remember_me[remeber]),
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=remember_me[remember]),
             'iat': datetime.datetime.utcnow()
         }
 
@@ -90,6 +91,105 @@ class LoginView(APIView):
         }
         return response
 
+class RestoreView(APIView):
+    def post(self, request):
+        data = {
+            'step': '1'
+        }
+        try:
+            email = request.data['email'].casefold()
+        except:
+            email = None
+        try:
+            user_code = request.data['code']
+        except:
+            user_code = None
+        try:
+            new_password = request.data['password']
+        except:
+            new_password = None
+
+        if email:
+            request.session['email'] = email
+            request.session['step'] = '1'
+            try:
+                user = User.objects.get(email = email)
+            except:
+                raise ValidationError('No user found with this email!')
+            code = randint(100000, 999999)
+            try:
+                send_mail(
+                    'Password recovery',
+                    f'You asked for password recovery, for this copy this code \'{code}\' and paste it into the site field',
+                    'colorswebsitehelp@gmail.com',
+                    [email],
+                    fail_silently=False,
+                )
+            except Exception as e:
+                raise ValidationError('Invalid email!')
+            data['step'] = '2'
+            request.session['code'] = str(code)
+        elif user_code:
+            request.session['step'] = '2'
+            try:
+                resend = request.data['resend']
+            except:
+                resend = None
+            if resend:
+                code = randint(100000, 999999)
+                email = request.session['email']
+                print(code)
+                try:
+                    send_mail(
+                        'Password recovery',
+                        f'You asked for password recovery, for this copy this code \'{code}\' and paste it into the site field',
+                        'colorswebsitehelp@gmail.com',
+                        [email],
+                        fail_silently=False,
+                    )
+                except Exception as e:
+                    raise ValidationError('Invalid email!')
+                data['step'] = '2'
+                request.session['code'] = str(code)
+            else:
+                if user_code == request.session['code']:
+                    data['step'] = '3'
+                    del request.session['code']
+                else:
+                    raise ValidationError('Invalid code!')
+        elif new_password:
+            request.session['step'] = '3'
+            user = User.objects.get(email = request.session['email'])
+
+            h = hashlib.sha256()
+            h.update(new_password.encode('utf-8'))
+            user.password = str(h.hexdigest())
+
+            user.save()
+            del request.session['email']
+            del request.session['step']
+
+            remember = request.data['remember_me']
+
+            payload = {
+                'id': user.id,
+                'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=remember_me[remember]),
+                'iat': datetime.datetime.utcnow()
+            }
+
+            token = jwt.encode(payload, 'secret', algorithm='HS256')
+
+            response = Response()
+
+            response.set_cookie(key='jwt', value=token, httponly=True)
+            response.data = {
+                'jwt': token
+            }
+            return response
+        else:
+            raise ValidationError('No valid data!')
+
+        return Response(data)
 
 class UserView(APIView):
     def get(self, request):

@@ -7,7 +7,7 @@
       <div id="profile_data">
         <div *ngIf="editing; then Edit else Data"></div>
         <ng-template #Data>
-          <span>Welcome {{ login.value }}</span>
+          <span>Welcome, {{ login.value }}</span>
           <span>Your email: {{ email.value }}</span>
           <div *ngIf="active[2]; then ColorEdit else None"></div>
           <ng-template #ColorEdit>

@@ -1,3 +1,21 @@
+.text {
+  top: 50vh;
+  z-index: -1;
+  font-size: 30px;
+  letter-spacing: 0.5em;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.text span {
+  padding: 5vh;
+  border: 1px solid black;
+}
+
 #header {
   width: 100vw;
   height: 10vh;
@@ -28,97 +46,6 @@
   0% { fill: #5074e2; }
   50% { fill: #9e50e2; }
   100% { fill: #5074e2; }
-}
-
-/*#header #title {
-  font-size: 36px;
-  background: linear-gradient(to bottom right, red 14.2857%, orange 28.5714%, yellow 42.8571%, green 57.1428%, blue 71.4285%, purple 85.7142%);
-  background-size: 200% auto;
-  color: black;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 5s linear infinite;
-}
-
-@keyframes shine {
-  to {
-    background-position: 200% center;
-  }
-}
-
-#header #title:hover {
-  cursor: pointer;
-  animation-play-state: paused;
-}
-
-#header #account button {
-  border-radius: 10%;
-  border: none;
-  background-color: white;
-  font-size: 22px;
-  color: black;
-  padding: 1vh 1vw;
-  transition: 0.5s;
-}
-
-#header #account button:hover {
-  transform: scale(1.25);
-  color: var(--bs-primary);
-}*/
-
-#menu {
-  background-color: black;
-  width: 100vw;
-  height: 6vh;
-  display: flex;
-  flex-direction: row;
-  border-top: 0.5vh solid black;
-  border-bottom: 0.5vh solid black;
-  padding: 0 0.05vw;
-  justify-content: space-between;
-}
-
-#hrefs, #links {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-#links {
-  justify-content: flex-end;
-}
-
-.href {
-  width: auto;
-  height: 5vh;
-  color: white;
-  padding: 0 2vw;
-  display: flex;
-  align-items: center;
-  border-left: 0.05vw solid white;
-  justify-content: space-between;
-  transition: 0.5s;
-}
-
-.href span {
-  text-transform: capitalize;
-  font-size: 20px;
-  transition: 0.5s;
-}
-
-.href:first-child {
-  border-left: none;
-}
-
-.href:hover, .active {
-  cursor: pointer;
-  padding: 0 2.5vw;
-}
-
-.href:hover span, .active span {
-  transform: scale(1.25);
 }
 
 #main {

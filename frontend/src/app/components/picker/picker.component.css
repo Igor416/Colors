@@ -40,13 +40,6 @@
   justify-content: space-between;
 }
 
-#picked_color_wrapper {
-  border-radius: 50%;
-  width: 16vw;
-  height: 16vw;
-  padding: 0.5vw;
-}
-
 #picked_color {
   display: flex;
   justify-content: center;
@@ -86,12 +79,13 @@
 }
 
 .picked_color_field {
-  width: 8vw;
-  margin-left: 4vw;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 4vw;
 }
 
-.picked_color_field:first-child {
-  margin-left: 0;
+.picked_color_field:last-child {
+  margin-right: 0;
 }
 
 .picked_color_field input {
@@ -143,4 +137,75 @@
 
 #help:hover {
   background-color: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  #picker {
+    margin: 0;
+  }
+
+  #picker_header {
+    flex-direction: column;
+  }
+
+  #picker_options {
+    width: 90vw;
+  }
+
+  #picker_representer {
+    flex-direction: column-reverse;
+  }
+
+  #picked_color {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  #invert_picked_color {
+    margin-left: -20vw;
+    margin-top: -5vh;
+  }
+
+  #picked_color_models {
+    width: 90vw;
+    justify-content: left;
+  }
+
+  .picked_color_model {
+    width: 90vw;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-bottom: 3vh;
+  }
+
+  .picked_color_field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 8vw;
+    margin-bottom: 1vh;
+  }
+
+  .picked_color_field input {
+    background-color: whitesmoke;
+    width: 14vw;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+  }
+
+  #picker_chooser {
+    padding: 5vh 0 0 0;
+    width: 90vw;
+  }
+
+  .picker_chooser_model {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+  }
+
+  .picker_chooser_field, .picker_chooser_gradient, .picker_chooser_field input  {
+    width: 90vw;
+  }
 }

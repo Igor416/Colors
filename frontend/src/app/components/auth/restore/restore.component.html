@@ -1,0 +1,44 @@
+<form id="restore" (submit)="sendForm()">
+  <div class="fields" id="email" *ngIf="step == 1">
+    <span id="title">Email</span><br>
+    <span id="text">Type in a valid email adress, so we can send you varification code to continue. Consider introducing a valid email adress, which you can access.</span>
+    <div class="field">
+      <label for="email">{{ email.getError() }}</label>
+      <div class="input {{ email.error == '' ? 'valid' : 'invalid' }}">
+        <input type="email" name="email" placeholder="Your email" class="form-control" autocomplete="username" [(ngModel)]="email.value">
+      </div>
+    </div>
+  </div>
+  <div class="fields" id="code" *ngIf="step == 2">
+    <span id="title">Code</span><br>
+    <span id="text">Type in the code, that you have received in your email address, so we can verify that nobody is trying to hack your account. Hint: the code is 6 digit</span>
+    <div class="field">
+      <label for="password">{{ code.getError() }}</label>
+      <div class="input">
+        <input type="text" name="code" placeholder="Code" class="form-control" [(ngModel)]="code.value">
+        <input id="resend" (click)="resendCode()" value="Resend Code" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="fields" id="password" *ngIf="step == 3">
+    <span id="title">New Password</span><br>
+    <span id="text">Type in the code, that you have received in your email address, so we can verify that nobody is trying to hack your account. Hint: the code is 6 digit</span>
+    <div class="field">
+      <label for="password">{{ password.getError() }}</label>
+      <div class="input {{ password.error == '' ? 'valid' : 'invalid' }}">
+        <input type="password" name="password" placeholder="Your password" class="form-control" autocomplete="new-password" [(ngModel)]="password.value">
+      </div>
+    </div>
+    <div class="field" id="password">
+      <label for="password2">{{ password2.getError() }}</label>
+      <div class="input {{ password2.error == '' ? 'valid' : 'invalid' }}">
+        <input type="password" name="password2" placeholder="New password" class="form-control" autocomplete="new-password" [(ngModel)]="password2.value">
+      </div>
+    </div>
+    <div class="field" id="remember_me">
+      <label for="remember_me">{{ remember_me ? 'Remember me for 3 days' : 'Expire in 1 hour' }}</label>
+      <input type="checkbox" name="remember_me" [(ngModel)]="remember_me">
+    </div>
+  </div>
+  <input id="submit" type="submit" value="Submit" class="form-control">
+</form>

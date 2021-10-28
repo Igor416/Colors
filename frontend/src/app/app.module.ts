@@ -15,6 +15,8 @@ import { DecadesComponent } from './components/trends/decades/decades.component'
 import { LogInComponent } from './components/auth/log-in/log-in.component';
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { RestoreComponent } from './components/auth/restore/restore.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     LogInComponent,
     SignInComponent,
     ProfileComponent,
+    MenuComponent,
+    RestoreComponent,
   ],
   imports: [
     BrowserModule,

@@ -167,3 +167,87 @@ input {
 #add_category div:hover {
   background-color: #cccccc;
 }
+
+@media screen and (max-width: 600px) {
+  #profile {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #profile_info {
+    width: 90vw;
+    padding: 0;
+  }
+
+  #profile_logo {
+    align-items: center;
+    width: 90vw;
+    padding: 0 2.5vw;
+  }
+
+  #profile_logo img {
+    width: 80vw;
+  }
+
+  #profile_data {
+    margin-top: 5vh;
+    font-size: 24px;
+  }
+
+  #edit_buttons {
+    margin-top: 3vh;
+    width: 90vw;
+  }
+
+  .valid::after {
+    margin-left: calc(90vw - 24px);
+  }
+
+  .invalid::after {
+    margin-left: calc(90vw - 24px);
+  }
+
+  input {
+    width: 90vw;
+  }
+
+  .sumbit {
+    width: 40vw;
+  }
+
+  .sumbit:hover {
+    transform: scale(1);
+  }
+
+  #profile_content {
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    width: 90vw;
+    font-size: 24px;
+  }
+
+  #profile_colors {
+    width: 90vw;
+    font-size: 20px;
+  }
+
+  .category {
+    width: 90vw;
+  }
+
+  .colors {
+    width: 90vw;
+    gap: 5vw;
+  }
+
+  .color {
+    width: 25vw;
+    height: 25vw;
+  }
+
+  .color div {
+    width: 25vw;
+  }
+}

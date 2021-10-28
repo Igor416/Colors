@@ -28,11 +28,11 @@
 .hex_color, .result {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 0;
-  width: 15vh;
-  height: 15vh;
+  width: auto;
+  height: auto;
   margin-bottom: 5vh;
 }
 
@@ -42,6 +42,7 @@
   align-items: center;
   width: 9vh;
   height: 9vh;
+  margin-bottom: 1vh;
   border-radius: 50%;
 }
 

@@ -13,6 +13,7 @@ export class DecadesComponent implements OnInit {
   colors!: HTMLCollectionOf<HTMLDivElement>;
   decade: DecadePallette;
   decades: string[];
+  isMobile: boolean;
 
   constructor(private route: ActivatedRoute, private trends: TrendsService) {
     let decade = this.route.snapshot.paramMap.get('decade') as string;
@@ -22,6 +23,7 @@ export class DecadesComponent implements OnInit {
     for (let i = 1920; i <= 2010; i += 10) {
       this.decades.push(i.toString())
     }
+    this.isMobile = window.matchMedia("(max-width: 1080px)").matches;
   }
 
   ngOnInit(): void {

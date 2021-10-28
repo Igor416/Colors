@@ -15,6 +15,9 @@ export class CalculatorComponent implements OnInit {
   maxColors: number;
 
   constructor(private colors: ColorsService) {
+    if (window.matchMedia("(max-width: 1080px)").matches) {
+      window.location.replace('http://localhost:4200/');
+    }
     this.pickedSignId = 0
     this.minColors = 2;
     this.maxColors = 26;

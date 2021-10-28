@@ -11,8 +11,10 @@ import { TrendsService, YearColor } from '../../../services/trends/trends.servic
 export class YearsComponent implements OnInit {
   colors: YearColor[];
   choosed_color: YearColor;
+  isMobile: boolean;
 
   constructor(private trends: TrendsService) {
+    this.isMobile = window.matchMedia("(max-width: 1080px)").matches;
     this.colors = this.trends.getYearColors();
     this.choosed_color = this.colors[0];
   }

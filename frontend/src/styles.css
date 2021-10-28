@@ -13,24 +13,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-.text {
-  z-index: -1;
-  font-size: 30px;
-  letter-spacing: 0.5em;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.text span {
-  padding: 5vh;
-  border: 1px solid black;
-}
-
 .bg {
   animation: slide 8s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, #e616e9 33%, #e96316 33%, #e96316 66%, #16e9e6 66%);

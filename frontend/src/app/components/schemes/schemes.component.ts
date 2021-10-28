@@ -22,11 +22,18 @@ export class SchemesComponent implements OnInit {
   schemes: string[];
   mouseIsDown: boolean;
   colors_shown: boolean;
+  isMobile: boolean;
 
   constructor(private route: ActivatedRoute, private schemeService: SchemeService, private canvasService: CanvasService) {
     let scheme;
+    this.isMobile = window.matchMedia("(max-width: 1080px)").matches
     let name = this.route.snapshot.paramMap.get('scheme') as string;
-    let size = 20 * screen.availWidth / 100; //20vw
+    let size = screen.availWidth
+    if (this.isMobile) {
+      size *= 80 / 100 //80vw
+    } else {
+      size *= 20 / 100 //20vw
+    }
     let coords = this.schemeService.loadCoords(name);
     if (coords.length == 2) { //the cookie may expire, then length will be 0
       scheme = this.schemeService.get(name, coords[0], coords[1], size);
@@ -48,7 +55,12 @@ export class SchemesComponent implements OnInit {
 
   ngOnInit(): void {
     //there are 2 different canvas elements so that when user drags any of the cursors we may redraw only the cursors, the wheel is only drawn once, at the beginind, remains unchanged
-    let size = 20 * screen.availWidth / 100; //20vw
+    let size = screen.availWidth
+    if (this.isMobile) {
+      size *= 80 / 100 //80vw
+    } else {
+      size *= 20 / 100 //20vw
+    }
     let container = document.getElementById('canvas_container') as HTMLElement;
 
     this.wheel = this.canvasService.drawWheel(size);
@@ -66,9 +78,15 @@ export class SchemesComponent implements OnInit {
     this.canvasService.drawAllCursors(this.scheme.cursors);
 
     //cursor can only be moved when the mouse is down, so we need to track mouse state
-    fromEvent(this.canvas, 'mousedown') .subscribe(e => { this.onMouseDown(e); });
-    fromEvent(this.canvas, 'mouseup') .subscribe(e => { this.onMouseUp(e); });
-    fromEvent(this.canvas, 'mousemove') .subscribe(e => { this.onCursorDrag(e); });
+    if (this.isMobile) {
+      fromEvent(this.canvas, 'touchstart') .subscribe(e => { this.onMouseDown(e); });
+      fromEvent(this.canvas, 'touchend') .subscribe(e => { this.onMouseUp(e); });
+      fromEvent(this.canvas, 'touchmove') .subscribe(e => { this.onCursorDrag(e); });
+    } else {
+      fromEvent(this.canvas, 'mousedown') .subscribe(e => { this.onMouseDown(e); });
+      fromEvent(this.canvas, 'mouseup') .subscribe(e => { this.onMouseUp(e); });
+      fromEvent(this.canvas, 'mousemove') .subscribe(e => { this.onCursorDrag(e); });
+    }
   }
 
   navigateTo(value: any): boolean {
@@ -154,9 +172,16 @@ export class SchemesComponent implements OnInit {
       let H = color.hsl.a.value;
       let S = color.hsl.b.value
 
-      for (let l = 90; l >= 50; l -= 10) {
-        info.push(new CursorInfo(l + '%', new Color(new HSL(H, S, l))));
+      if (this.isMobile) {
+        info.push(new CursorInfo('95%', new Color(new HSL(H, S, 95))));
+        info.push(new CursorInfo('75%', new Color(new HSL(H, S, 75))));
+        info.push(new CursorInfo('50%', new Color(new HSL(H, S, 50))));
+      } else {
+        for (let l = 90; l >= 50; l -= 10) {
+          info.push(new CursorInfo(l + '%', new Color(new HSL(H, S, l))));
+        }
       }
+
       info.push(new CursorInfo('', new Color(new HSL(0, 0, 96)))); //background-color, simulate space between gradient and picked color
       info.push(new CursorInfo('1', color));
 
@@ -166,9 +191,15 @@ export class SchemesComponent implements OnInit {
       let mixed = cursors[0].color.mix(cursors[1].color)
 
       info.push(new CursorInfo('1', cursors[0]));
-      info.push(new CursorInfo('1 & 1 & 2', mixed, cursors[0]));
-      info.push(new CursorInfo('1 & 2', mixed));
-      info.push(new CursorInfo('1 & 2 & 2', mixed, cursors[1]));
+      if (this.isMobile) {
+        info.push(new CursorInfo('1 & 1.2', mixed, cursors[0]));
+        info.push(new CursorInfo('1 & 2', mixed));
+        info.push(new CursorInfo('1.2 & 2', mixed, cursors[1]));
+      } else {
+        info.push(new CursorInfo('1 & 1 & 2', mixed, cursors[0]));
+        info.push(new CursorInfo('1 & 2', mixed));
+        info.push(new CursorInfo('1 & 2 & 2', mixed, cursors[1]));
+      }
       info.push(new CursorInfo('2', cursors[1]));
 
     } else if (cursors.length == 3) {

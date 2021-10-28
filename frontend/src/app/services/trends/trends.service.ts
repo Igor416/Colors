@@ -58,6 +58,6 @@ export class DecadePallette {
       this.colors.push(Color.toColor(hex));
     }
 
-    this.description = description + '\nPhotos took from https://juiceboxinteractive.com/blog/color/.';
+    this.description = description;
   }
 }

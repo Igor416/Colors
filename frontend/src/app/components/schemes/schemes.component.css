@@ -70,3 +70,49 @@
 .cursor-value span {
   font-size: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  #schemes {
+    margin: 0;
+  }
+
+  #schemes_header {
+    flex-direction: column;
+    width: 90vw;
+  }
+
+  #schemes_title {
+    font-size: 24px;
+  }
+
+  #schemes_options {
+    width: 90vw;
+    font-size: 20px;
+  }
+
+  #scheme {
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+  }
+
+  #scheme_info {
+    flex-direction: column-reverse;
+    margin-left: 0;
+    width: 90vw;
+  }
+
+  #cursor_values {
+    justify-content: center;
+    margin: 3vh 0;
+  }
+
+  .cursor-value {
+    width: 17.5vw;
+    height: 17.5vw;
+  }
+
+  .cursor-value span {
+    font-size: 16px;
+  }
+}

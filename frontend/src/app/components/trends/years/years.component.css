@@ -78,3 +78,47 @@
   font-size: 24px;
   text-align: left;
 }
+
+@media screen and (max-width: 600px) {
+  #years {
+    margin: 0;
+  }
+
+  #years_header {
+    flex-direction: column;
+    width: 90vw;
+    font-size: 24px;
+  }
+
+  #decades_link {
+    font-size: 22px;
+  }
+
+  #decades_link span {
+    color: var(--bs-primary);
+    font-size: 22px;
+  }
+
+  #years_body {
+    width: 90vw;
+    margin-top: 3vh;
+  }
+
+  #years_content {
+    width: 90vw;
+    font-size: 20px;
+    padding-right: 0;
+    border-right: none;
+  }
+
+  #years_colors {
+    justify-content: center;
+    align-items: center;
+    gap: 2.5vh;
+  }
+
+  .color {
+    width: 40vw;
+    height: 40vw;
+  }
+}

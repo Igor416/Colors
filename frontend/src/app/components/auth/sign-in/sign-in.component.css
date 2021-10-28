@@ -88,3 +88,51 @@ label {
   transform: scale(1.25);
   color: var(--bs-primary);
 }
+
+@media screen and (max-width: 600px) {
+  #sign_in {
+    margin: 0;
+  }
+
+  #title {
+    font-size: 32px;
+    margin-bottom: 5vh;
+  }
+
+  #inputs {
+    gap: 2.5vh;
+    margin-bottom: 5vh;
+  }
+
+  #inputs div {
+    font-size: 20px;
+    width: 80vw;
+  }
+
+  .valid::after {
+    margin-left: calc(80vw - 24px);
+    font-size: 20px;
+  }
+
+  .invalid::after {
+    margin-left: calc(80vw - 24px);
+    font-size: 20px;
+  }
+
+  #remember_me {
+    width: 80vw !important;
+  }
+
+  #remember_me input {
+    transform: scale(1.5);
+  }
+
+  #remember_me label {
+    color: black;
+  }
+
+  #submit {
+    font-size: 24px;
+    width: 60vw;
+  }
+}

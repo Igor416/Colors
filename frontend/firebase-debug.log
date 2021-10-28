@@ -1,0 +1,21 @@
+[debug] [2021-10-14T07:18:04.885Z] ----------------------------------------------------------------------
+[debug] [2021-10-14T07:18:04.887Z] Command:       D:\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-10-14T07:18:04.887Z] CLI Version:   9.20.0
+[debug] [2021-10-14T07:18:04.887Z] Platform:      win32
+[debug] [2021-10-14T07:18:04.887Z] Node Version:  v14.15.1
+[debug] [2021-10-14T07:18:04.889Z] Time:          Thu Oct 14 2021 10:18:04 GMT+0300 (Восточная Европа, летнее время)
+[debug] [2021-10-14T07:18:04.889Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-14T07:18:04.897Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-14T07:18:04.897Z] > authorizing via signed-in user (igrgro@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\User\Python\Django\colors\frontend
+

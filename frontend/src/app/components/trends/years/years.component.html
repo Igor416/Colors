@@ -11,19 +11,30 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </span>
       <div id="years_colors">
-        <div
-          class="color"
-          (mouseover)="choosed_color = year_color"
-          [ngStyle]="{ 'background-color': year_color.color.hex.toString() }"
-          *ngFor="let year_color of colors">
-          <span
-            [ngStyle]="{ 'color': year_color.color.getShade() }">
-            {{ year_color.name }}
-          </span>
+        <div class="color-container" *ngFor="let year_color of colors">
+          <div
+            class="color"
+            (mouseover)="choosed_color = year_color"
+            [ngStyle]="{ 'background-color': year_color.color.hex.toString() }">
+            <div
+              class="color-info"
+              *ngIf="isMobile"
+              [ngStyle]="{ 'color': year_color.color.getShade() }">
+              <span>{{ year_color.name }}</span><br>
+              <span>{{ year_color.year }}</span><br>
+              <span>Code: {{ year_color.pantone }}</span>
+            </div>
+            <div
+              class="color-info"
+              *ngIf="!isMobile"
+              [ngStyle]="{ 'color': year_color.color.getShade() }">
+              <span>{{ year_color.name }}</span><br>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div id="choosed_color">
+    <div id="choosed_color" *ngIf="!isMobile">
       <span>Name: {{ choosed_color.name }}</span>
       <span>Hex: {{ choosed_color.color.hex.toString() }}</span>
       <span>HSL: hsl({{ choosed_color.color.hsl.toString() }})</span>

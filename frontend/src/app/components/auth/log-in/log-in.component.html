@@ -12,7 +12,7 @@
       <label for="password">{{ password.getError() }}</label>
       <div class="input {{ password.error == '' ? 'valid' : 'invalid' }}">
         <input type="password" name="password" placeholder="Your password" class="form-control" autocomplete="current-password" [(ngModel)]="password.value">
-        <div routerLink="/log_in" class="redirect"><span>Forgot password?</span></div>
+        <div routerLink="/restore" class="redirect"><span>Forgot password?</span></div>
       </div>
     </div>
     <div id="remember_me">

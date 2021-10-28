@@ -10,6 +10,7 @@ import { YearsComponent } from './components/trends/years/years.component';
 import { DecadesComponent } from './components/trends/decades/decades.component';
 import { LogInComponent } from './components/auth/log-in/log-in.component';
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
+import { RestoreComponent } from './components/auth/restore/restore.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'log_in', component: LogInComponent},
   {path: 'sign_up', component: SignInComponent},
+  {path: 'restore', component: RestoreComponent},
 ];
 
 @NgModule({

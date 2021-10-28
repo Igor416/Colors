@@ -18,10 +18,15 @@
   </div>
   <div id="decades_content">
     <div id="decade_text">
-      <span>Trend colors in {{ decade.decade }}s</span>
+      <span *ngIf="!isMobile">Trend colors in {{ decade.decade }}s</span>
       <div id="decade_content">
-        <span>{{ decade.description }}</span>
-        <div id="decade_colors">
+        <div id="decade_description">
+          <span>{{ decade.description }}</span><br>
+          <span>Photos took from
+            <a href="https://juiceboxinteractive.com/blog/color/" target="_blank">here</a>.
+          </span>
+        </div>
+        <div id="decade_colors" *ngIf="!isMobile">
           <div
             class="color"
             (mouseover)="show(i)"
@@ -37,6 +42,18 @@
               <span class="text-hidden">{{ color.hex.toString() }}</span>
             </div>
             <div class="color-shade shade-hidden"></div>
+          </div>
+        </div>
+        <div id="decade_colors" *ngIf="isMobile">
+          <div
+            class="color"
+            [ngStyle]="{
+              'color': color.getShade(),
+              'background-color': color.hex.toString()
+            }"
+            *ngFor="let color of decade.colors; let i = index">
+            <span>{{ decade.names[i] }}</span>
+            <span>{{ color.hex.toString() }}</span>
           </div>
         </div>
       </div>

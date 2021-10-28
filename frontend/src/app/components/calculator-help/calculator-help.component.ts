@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculatorHelpComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    if (window.matchMedia("(max-width: 1080px)").matches) {
+      window.location.replace('http://localhost:4200/');
+    }
+  }
 
   ngOnInit(): void {
   }

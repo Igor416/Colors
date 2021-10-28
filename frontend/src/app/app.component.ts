@@ -11,7 +11,6 @@ import { AuthService } from './services/auth/auth.service';
 })
 export class AppComponent {
   title: string;
-  signedIn!: boolean;
   hrefs: Array<{
     name: string,
     link: string
@@ -20,15 +19,6 @@ export class AppComponent {
 
   constructor(private titleService: Title, private auth: AuthService, private router: Router) {
     this.title = 'Colors';
-    let names = ['picker', 'calculator', 'trends', 'schemes', 'models']
-    let links = ['picker', 'calculator', 'trends/years', 'schemes/analogous', 'models']
-
-    for (let i = 0; i < names.length; i++) {
-      this.hrefs.push({
-        name: names[i],
-        link: links[i]
-      })
-    }
   }
 
   ngOnInit(): void {
@@ -37,17 +27,6 @@ export class AppComponent {
         this.route = event.url.substr(1);
         this.setTitle(this.route);
       }
-    });
-    this.signedIn = this.auth.isAuth();
-  }
-
-  exit(): void {
-    this.auth.logout().subscribe((resp: any) => {
-      this.auth.setAuth(false)
-      window.location.href = `http://localhost:4200/`;
-    },
-    err => {
-      console.log(err)
     });
   }
 

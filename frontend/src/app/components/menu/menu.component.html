@@ -1,0 +1,134 @@
+<div id="menu" *ngIf="!isMobile">
+  <div id="hrefs">
+    <div
+      id="{{ href.name }}_link"
+      class="href {{ route?.startsWith(href.name) ? 'active': ''}}"
+      routerLink="/{{ href.link }}"
+      *ngFor="let href of hrefs">
+      <span>{{ href.name }}</span>
+    </div>
+  </div>
+  <div id="links">
+    <div
+      id="home"
+      class="href {{ route == '' ? 'active': ''}}"
+      routerLink="/">
+      <span>home&nbsp;<i class="fa fa-home"></i></span>
+    </div>
+    <div *ngIf="signedIn then Home else Log_In"></div>
+    <ng-template #Home>
+      <div
+        id="profile"
+        class="href {{ route == 'profile' ? 'active': ''}}"
+        routerLink="/profile">
+        <span>profile&nbsp;<i class="fa fa-user"></i></span>
+      </div>
+      <div
+        id="exit"
+        class="href"
+        (click)="exit()">
+        <span>exit&nbsp;<i class="fas fa-sign-out-alt"></i></span>
+      </div>
+    </ng-template>
+    <ng-template #Log_In>
+      <div
+        id="log_in"
+        class="href {{ route == 'log_in' ? 'active': ''}}"
+        routerLink="/log_in">
+        <span>log in&nbsp;<i class="fas fa-sign-in-alt"></i></span>
+      </div>
+      <div
+        id="sign_in"
+        class="href {{ route == 'sign_up' ? 'active': ''}}"
+        routerLink="/sign_up">
+        <span>sign up&nbsp;<i class="fas fa-sign-in-alt"></i></span>
+      </div>
+    </ng-template>
+  </div>
+</div>
+<div id="menu_mobile" style="display: {{ isMobile ? 'block' : 'none'}}">
+  <div id="row" style="justify-content: {{ opened ? 'flex-end' : 'space-between' }}">
+    <div id="link_icons">
+      <div
+        id="home"
+        class="row_href {{ route == '' ? 'active': ''}}"
+        routerLink="/">
+        <span><i class="fa fa-home"></i></span>
+      </div>
+      <div *ngIf="signedIn then Row_Home else Row_Log_In"></div>
+      <ng-template #Row_Home>
+        <div
+          id="profile"
+          class="row_href {{ route == 'profile' ? 'active': ''}}"
+          routerLink="/profile">
+          <span><i class="fa fa-user"></i></span>
+        </div>
+        <div
+          id="exit"
+          class="row_href"
+          (click)="exit()">
+          <span><i class="fas fa-sign-out-alt"></i></span>
+        </div>
+      </ng-template>
+      <ng-template #Row_Log_In>
+        <div
+          id="log_in"
+          class="row_href {{ route == 'log_in' ? 'active': ''}}"
+          routerLink="/log_in">
+          <span><i class="fas fa-sign-in-alt"></i></span>
+        </div>
+      </ng-template>
+    </div>
+    <div id="times">
+      <span (click)="toogleMenu()"><i class="fas {{ opened ? 'fa-times' : 'fa-bars' }}"></i></span>
+    </div>
+  </div>
+  <div id="column">
+    <div id="column_hrefs">
+      <div
+        id="{{ href.name }}_link"
+        class="column_href {{ route?.startsWith(href.name) ? 'active': ''}}"
+        routerLink="/{{ href.link }}"
+        *ngFor="let href of hrefs">
+        <span>{{ href.name }}</span>
+      </div>
+    </div>
+    <div id="column_links">
+      <div
+        id="home"
+        class="column_href {{ route == '' ? 'active': ''}}"
+        routerLink="/">
+        <span>home&nbsp;<i class="fa fa-home"></i></span>
+      </div>
+      <div *ngIf="signedIn then Column_Home else Column_Log_In"></div>
+      <ng-template #Column_Home>
+        <div
+          id="profile"
+          class="column_href {{ route == 'profile' ? 'active': ''}}"
+          routerLink="/profile">
+          <span>profile&nbsp;<i class="fa fa-user"></i></span>
+        </div>
+        <div
+          id="exit"
+          class="column_href"
+          (click)="exit()">
+          <span>exit&nbsp;<i class="fas fa-sign-out-alt"></i></span>
+        </div>
+      </ng-template>
+      <ng-template #Column_Log_In>
+        <div
+          id="log_in"
+          class="column_href {{ route == 'log_in' ? 'active': ''}}"
+          routerLink="/log_in">
+          <span>log in&nbsp;<i class="fas fa-sign-in-alt"></i></span>
+        </div>
+        <div
+          id="sign_in"
+          class="column_href {{ route == 'sign_up' ? 'active': ''}}"
+          routerLink="/sign_up">
+          <span>sign up&nbsp;<i class="fas fa-sign-in-alt"></i></span>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

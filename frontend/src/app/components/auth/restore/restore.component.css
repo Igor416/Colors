@@ -1,8 +1,9 @@
-#log_in {
+#restore {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
   text-align: center;
   margin: 2.5vh 25vw;
   padding: 5vh 5vw;
@@ -11,21 +12,32 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vh;
+}
+
 #title {
   font-size: 44px;
-  margin-bottom: 10vh;
 }
 
-#inputs {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5vh;
-  margin-bottom: 10vh;
+#text {
+  margin: 2vh 0 5vh 0;
+  text-align: justify;
+  font-size: 24px;
 }
 
-#inputs div {
+.field {
+  text-align: left;
+}
+
+.field div {
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: left;
   gap: 0.5vh;
   font-size: 20px;
@@ -55,15 +67,6 @@ label {
   font-size: 18px;
 }
 
-.redirect span {
-  color: var(--bs-primary);
-  font-size: 16px;
-}
-
-.redirect:hover {
-  cursor: pointer;
-}
-
 #remember_me {
   display: flex;
   justify-content: space-between;
@@ -80,61 +83,67 @@ label {
   color: black;
 }
 
-#submit {
+#resend, #submit {
   font-size: 28px;
   width: 10vw;
   transition: 0.5s;
 }
 
-#submit:hover {
+#resend {
+  text-align: center;
+  margin-top: 3vh;
+}
+
+#resend:hover, #submit:hover {
   transform: scale(1.25);
   color: var(--bs-primary);
 }
 
 @media screen and (max-width: 600px) {
-  #log_in {
+  #restore {
     margin: 0;
   }
 
   #title {
     font-size: 32px;
-    margin-bottom: 5vh;
   }
 
-  #inputs {
-    gap: 2.5vh;
-    margin-bottom: 5vh;
-  }
-
-  #inputs div {
+  #text {
+    margin: 2vh 0 5vh 0;
     font-size: 20px;
-    width: 80vw;
+  }
+
+  .field div {
+    gap: 0.5vh;
+    font-size: 20px;
+    width: 90vw;
   }
 
   .valid::after {
-    margin-left: calc(80vw - 24px);
+    margin-left: calc(90vw - 24px);
     font-size: 20px;
   }
 
   .invalid::after {
-    margin-left: calc(80vw - 24px);
+    margin-left: calc(90vw - 24px);
     font-size: 20px;
   }
 
   #remember_me {
-    width: 80vw !important;
+    width: 90vw !important;
   }
 
-  #remember_me input {
-    transform: scale(1.5);
-  }
-
-  #remember_me label {
-    color: black;
-  }
-
-  #submit {
+  #resend, #submit {
+    margin-top: 2vh;
     font-size: 24px;
-    width: 60vw;
+    width: 70vw;
+  }
+
+  #resend {
+    margin-top: 3vh;
+  }
+
+  #resend:hover, #submit:hover {
+    transform: scale(1);
   }
 }

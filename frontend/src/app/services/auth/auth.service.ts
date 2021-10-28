@@ -40,6 +40,10 @@ export class AuthService {
     return this.http.post<any>(this.api + 'register', this.encrypt(data), this.headers)
   }
 
+  restore(data: any) {
+    return this.http.post<any>(this.api + 'restore', this.encrypt(data), this.headers)
+  }
+
   get(): Observable<any> {
     return this.http.get<any>(this.api + 'user', this.headers)
   }
@@ -53,8 +57,10 @@ export class AuthService {
   }
 
   encrypt(data: any): any {
-    let password = data.password;
-    data.password = this.rot13(password) // "very" secure
+    if ('password' in data) {
+      let password = data.password;
+      data.password = this.rot13(password) // "very" secure
+    }
     return data;
   }
 
