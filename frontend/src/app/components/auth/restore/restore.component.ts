@@ -82,7 +82,7 @@ export class RestoreComponent implements OnInit {
       if (this.password.isValid() && this.password2.isValid()) {
         this.auth.restore(data).subscribe((resp: any) => {
           this.auth.setAuth(true, this.remember_me);
-          window.location.href = (`https://igor416.github.io/Colors/profile`);
+          window.location.href = (`https://colorsapiwebsite.pythonanywhere.com/profile`);
         },
         err => {
           this.auth.displayErrors(err.error);

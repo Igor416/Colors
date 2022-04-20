@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { IScheme, Monochromatic, Complementary, Analogous, Compound, Triadic, Rectangle, Square } from '../../Scheme';
 import { Cursor } from '../../Cursor';
@@ -24,7 +24,7 @@ export class SchemesComponent implements OnInit {
   colors_shown: boolean;
   isMobile: boolean;
 
-  constructor(private route: ActivatedRoute, private schemeService: SchemeService, private canvasService: CanvasService) {
+  constructor(private router: Router, private route: ActivatedRoute, private schemeService: SchemeService, private canvasService: CanvasService) {
     let scheme;
     this.isMobile = window.matchMedia("(max-width: 1080px)").matches
     let name = this.route.snapshot.paramMap.get('scheme') as string;
@@ -42,7 +42,7 @@ export class SchemesComponent implements OnInit {
     }
 
     if (scheme == null) {
-      window.location.replace('https://igor416.github.io/Colors/');
+      window.location.replace('https://colorsapiwebsite.pythonanywhere.com/');
     } else {
       this.scheme = scheme;
       this.picked_scheme = scheme.name;
@@ -95,7 +95,9 @@ export class SchemesComponent implements OnInit {
     */
     if (value) {
       value = value.target.value.split(' ');
-      window.location.href = (`https://igor416.github.io/Colors/schemes/${value[1]}`);
+      this.router.navigate([`/schemes/${value[1]}`]).then(() => {
+        window.location.reload();
+      });
     }
     return false;
   }

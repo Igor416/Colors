@@ -33,7 +33,7 @@ export class LogInComponent implements OnInit {
     if (this.email.isValid() && this.password.isValid()) {
       this.auth.login(data).subscribe((resp: any) => {
         this.auth.setAuth(true, this.remember_me);
-        window.location.href = (`https://igor416.github.io/Colors/profile`);
+        window.location.href = (`https://colorsapiwebsite.pythonanywhere.com/profile`);
       },
       err => {
         this.auth.displayErrors(err.error);

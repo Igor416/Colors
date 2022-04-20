@@ -4,7 +4,7 @@
       <span>Trends through the decades</span>
       <br>
       <span id="years_link">
-        See also: <span routerLink="trends/years">Trends through years</span>
+        See also: <span routerLink="/trends/years">Trends through years</span>
       </span>
     </div>
     <select id="decades_links" (change)="navigateTo($event);" [(ngModel)]="decade.decade">
@@ -58,6 +58,6 @@
         </div>
       </div>
     </div>
-    <img src="assets/{{ decade.decade }}_trends.jpg">
+    <img src="static/assets/{{ decade.decade }}_trends.jpg">
   </div>
 </div>

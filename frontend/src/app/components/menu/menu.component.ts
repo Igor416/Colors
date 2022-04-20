@@ -51,7 +51,7 @@ export class MenuComponent implements OnInit {
   exit(): void {
     this.auth.logout().subscribe((resp: any) => {
       this.auth.setAuth(false)
-      window.location.href = `https://igor416.github.io/`;
+      window.location.href = `https://colorsapiwebsite.pythonanywhere.com/`;
     },
     err => {
       console.log(err)

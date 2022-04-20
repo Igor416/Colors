@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { TrendsService, DecadePallette } from '../../../services/trends/trends.service';
 
@@ -15,7 +15,7 @@ export class DecadesComponent implements OnInit {
   decades: string[];
   isMobile: boolean;
 
-  constructor(private route: ActivatedRoute, private trends: TrendsService) {
+  constructor(private router: Router, private route: ActivatedRoute, private trends: TrendsService) {
     let decade = this.route.snapshot.paramMap.get('decade') as string;
     this.decade = this.trends.getDecadePallete(decade) as DecadePallette;
 
@@ -37,7 +37,9 @@ export class DecadesComponent implements OnInit {
     */
     if (value) {
       value = value.target.value.split(' ');
-      window.location.href = (`https://igor416.github.io/Colors/trends/decades/${value[1]}`);
+      this.router.navigate([`/trends/decades/${value[1]}`]).then(() => {
+        window.location.reload();
+      });
     }
     return false;
   }

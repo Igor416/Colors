@@ -16,7 +16,7 @@ export class CalculatorComponent implements OnInit {
 
   constructor(private colors: ColorsService) {
     if (window.matchMedia("(max-width: 1080px)").matches) {
-      window.location.replace('https://igor416.github.io/Colors/');
+      window.location.replace('https://colorsapiwebsite.pythonanywhere.com/');
     }
     this.pickedSignId = 0
     this.minColors = 2;
