@@ -37,7 +37,7 @@ export class DecadesComponent implements OnInit {
     */
     if (value) {
       value = value.target.value.split(' ');
-      window.location.href = (`http://localhost:4200/trends/decades/${value[1]}`);
+      window.location.href = (`https://igor416.github.io/Colors/trends/decades/${value[1]}`);
     }
     return false;
   }

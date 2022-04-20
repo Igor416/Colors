@@ -42,7 +42,7 @@ export class SchemesComponent implements OnInit {
     }
 
     if (scheme == null) {
-      window.location.replace('http://localhost:4200/');
+      window.location.replace('https://igor416.github.io/Colors/');
     } else {
       this.scheme = scheme;
       this.picked_scheme = scheme.name;
@@ -95,7 +95,7 @@ export class SchemesComponent implements OnInit {
     */
     if (value) {
       value = value.target.value.split(' ');
-      window.location.href = (`http://localhost:4200/schemes/${value[1]}`);
+      window.location.href = (`https://igor416.github.io/Colors/schemes/${value[1]}`);
     }
     return false;
   }

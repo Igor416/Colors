@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
     this.emailText = 'email';
 
     if (!this.auth.isAuth()) {
-      window.location.href = (`http://localhost:4200/sign_up/`);
+      window.location.href = (`https://igor416.github.io/Colors/sign_up/`);
     }
     this.editing = false;
   }

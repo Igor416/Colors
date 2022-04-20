@@ -8,7 +8,7 @@ import { CookiesService } from '../cookies/cookies.service'
   providedIn: 'root'
 })
 export class AuthService {
-  api = 'http://localhost:8000/';
+  api = 'http://colorsapiwebsite.pythonanywhere.com/';
   headers = {
     withCredentials: true,
     headers: new HttpHeaders({

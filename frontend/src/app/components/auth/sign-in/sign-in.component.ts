@@ -39,7 +39,7 @@ export class SignInComponent implements OnInit {
     if (this.name.isValid() && this.email.isValid() && this.password.isValid() && this.password2.isValid()) {
       this.auth.signup(data).subscribe((resp: any) => {
         this.auth.setAuth(true, this.remember_me);
-        window.location.href = (`http://localhost:4200/profile`);
+        window.location.href = (`https://igor416.github.io/Colors/profile`);
       },
       err => {
         this.auth.displayErrors(err.error);

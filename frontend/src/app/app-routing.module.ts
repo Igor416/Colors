@@ -24,8 +24,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'log_in', component: LogInComponent},
   {path: 'sign_up', component: SignInComponent},
-  {path: 'restore', component: RestoreComponent},
-  {path: '**', redirectTo: '/'}
+  {path: 'restore', component: RestoreComponent}
 ];
 
 @NgModule({

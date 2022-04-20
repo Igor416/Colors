@@ -9,7 +9,7 @@ export class CalculatorHelpComponent implements OnInit {
 
   constructor() {
     if (window.matchMedia("(max-width: 1080px)").matches) {
-      window.location.replace('http://localhost:4200/');
+      window.location.replace('https://igor416.github.io/Colors/');
     }
   }
 

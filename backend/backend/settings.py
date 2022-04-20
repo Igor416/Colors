@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'colors_api'
+    'colors_api',
+    'frontend'
 ]
 
 MIDDLEWARE = [
