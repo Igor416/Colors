@@ -9,5 +9,10 @@ This website is created for designers.
 	- *Dynamic form*
 	- *Range Inputs*
 	- *Color Invertion*
-
+- ### Calculator
+	Select colors and perform different actions with them: **addition**, **substraction**, **mixing** (finding the mean value). The number of colors is limited to 50.
+	#### Features:
+	- *Dynamic form*
+	- *Right-side menu*
+	- *Help page*
 	
