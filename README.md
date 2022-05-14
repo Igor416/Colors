@@ -41,3 +41,9 @@ This website is created for designers.
 	Read information about any of these 5 colors systems: **rgb**, **hex**, **hsl**, **hwb**, **cmyk**.
 	#### Features:
 	- *None*
+	
+- ### Log in, Sign up and Restore
+	Autorization pages for entering, regestring and restoring account respectively
+	#### Features:
+	- *Input validation*
+	- *'Remember me' button*
