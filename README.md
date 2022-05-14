@@ -40,10 +40,15 @@ This website is created for designers.
 - ### Models
 	Read information about any of these 5 colors systems: **rgb**, **hex**, **hsl**, **hwb**, **cmyk**.
 	#### Features:
-	- *None*
+	- *Zebra Grid*
 	
 - ### Log in, Sign up and Restore
 	Autorization pages for entering, regestring and restoring account respectively
 	#### Features:
 	- *Input validation*
 	- *'Remember me' button*
+
+- ### Profile
+	Save and edit your color groups
+	#### Features:
+	- *Profile side menu*
