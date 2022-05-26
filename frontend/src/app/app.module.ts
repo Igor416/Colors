@@ -17,6 +17,7 @@ import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { RestoreComponent } from './components/auth/restore/restore.component';
+import { ImageComponent } from './components/image/image.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { RestoreComponent } from './components/auth/restore/restore.component';
     ProfileComponent,
     MenuComponent,
     RestoreComponent,
+    ImageComponent,
   ],
   imports: [
     BrowserModule,

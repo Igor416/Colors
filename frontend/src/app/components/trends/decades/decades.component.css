@@ -47,27 +47,20 @@
 
 #decades_content {
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
+  flex-direction: row-reverse;
   width: 85vw;
   margin-top: 5vh;
   font-size: 24px;
 }
 
-#decade_text {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  justify-content: space-between;
-  width: 50vw;
-}
-
 #decade_content {
   display: flex;
   flex-direction: column;
+  justify-self: flex-start;
   text-align: left;
+  justify-content: space-between;
   width: 50vw;
-  margin-top: 2.5vh;
 }
 
 #decade_content span {
@@ -76,26 +69,58 @@
 
 #decade_colors {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+}
+
+#decade_color_container {
+  display: flex;
+  align-self: flex-end;
   flex-direction: row;
   text-align: center;
   width: 50vw;
-  margin-top: 10vh;
+  transition: 0.7s;
+}
+
+.colors-showen {
+  height: 50vh;
+}
+
+.colors-hidden {
+  height: 0vh;
+}
+
+#arrow {
+  border: solid var(--bs-primary);
+  border-width: 0 0.5vw 0.5vw 0;
+  display: inline-block;
+  padding: 0.5vw;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transition: 0.7s;
+}
+
+#arrow:hover {
+  border: solid #0a58ca;
+  border-width: 0 0.5vw 0.5vw 0;
+  cursor: pointer;
 }
 
 .color {
   width: calc(50vw / 6);
-  height: 50vh;
+  height: inherit;
 }
 
 .color-value {
   position: absolute;
-  display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 5vh 0;
   text-align: center;
   width: inherit;
-  height: 50vh;
+  height: inherit;
   font-size: 20px;
 }
 
@@ -114,21 +139,17 @@
 .color-shade {
   z-index: 1;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   width: inherit;
-  transition: 0.5s;
+  transition: 0.7s;
 }
 
 .shade-showen {
-  height: 0%;
+  height: 0vh;
 }
 
 .shade-hidden {
-  height: 50%;
-}
-
-#decades_content img {
-  width: 30vw;
+  height: 50vh;
 }
 
 @media screen and (max-width: 600px) {
@@ -170,10 +191,6 @@
     font-size: 20px;
   }
 
-  #decade_text {
-    width: 90vw;
-  }
-
   #decade_content {
     text-align: justify;
     width: 90vw;
@@ -203,9 +220,5 @@
     height: 40vw;
     padding: 5vw;
     border-radius: 5%;
-  }
-
-  #decades_content img {
-    width: 90vw;
   }
 }

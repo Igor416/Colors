@@ -2,7 +2,15 @@
   <div id="profile_info">
     <div>
       <div id="profile_logo">
-        <img src="static/assets/avatar.png" alt="avatar">
+        <app-image
+          src="assets/avatar.png"
+          alt="avatar"
+          [style]="
+            {width: '12.5vw',
+            border: '1px solid var(--bs-primary)',
+            'border-radius': '50%'}"
+          widthSmall="80vw">
+          </app-image>
       </div>
       <div id="profile_data">
         <div *ngIf="editing; then Edit else Data"></div>

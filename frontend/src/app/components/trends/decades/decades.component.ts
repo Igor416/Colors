@@ -12,14 +12,14 @@ import { TrendsService, DecadePallette } from '../../../services/trends/trends.s
 export class DecadesComponent implements OnInit {
   colors!: HTMLCollectionOf<HTMLDivElement>;
   decade: DecadePallette;
-  decades: string[];
   isMobile: boolean;
+  decades: string[] = [];
+  colorsShowed: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private trends: TrendsService) {
     let decade = this.route.snapshot.paramMap.get('decade') as string;
     this.decade = this.trends.getDecadePallete(decade) as DecadePallette;
 
-    this.decades = []
     for (let i = 1920; i <= 2010; i += 10) {
       this.decades.push(i.toString())
     }
@@ -42,6 +42,10 @@ export class DecadesComponent implements OnInit {
       });
     }
     return false;
+  }
+
+  closeColors(): void {
+    this.colorsShowed = false
   }
 
   show(index: number): void {

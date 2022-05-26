@@ -186,10 +186,6 @@ input {
     padding: 0 2.5vw;
   }
 
-  #profile_logo img {
-    width: 80vw;
-  }
-
   #profile_data {
     margin-top: 5vh;
     font-size: 24px;

@@ -49,6 +49,7 @@ export class DecadePallette {
   names: string[];
   colors: Color[] = [];
   description: string;
+  shortDesc: string;
 
   constructor(decade: string, names: string[], hexs: string[], description: string) {
     this.decade = decade;
@@ -59,5 +60,6 @@ export class DecadePallette {
     }
 
     this.description = description;
+    this.shortDesc = description.split(' ').slice(0, 21).join(' ')
   }
 }

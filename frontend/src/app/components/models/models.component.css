@@ -49,10 +49,6 @@
   height: auto;
 }
 
-.model img {
-  width: 20vw;
-}
-
 @media screen and (max-width: 600px) {
   #models {
     margin: 0;
@@ -90,9 +86,5 @@
 
   .model-space {
     display: none;
-  }
-
-  .model img {
-    width: 80vw;
   }
 }

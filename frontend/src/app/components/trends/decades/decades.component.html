@@ -17,16 +17,27 @@
     </select>
   </div>
   <div id="decades_content">
-    <div id="decade_text">
-      <span *ngIf="!isMobile">Trend colors in {{ decade.decade }}s</span>
-      <div id="decade_content">
-        <div id="decade_description">
-          <span>{{ decade.description }}</span><br>
+    <div id="decade_content" *ngIf="!isMobile">
+      <div id="decade_description">
+        <div *ngIf="colorsShowed">
+          <span>{{ decade.shortDesc }}... <i (click)="this.colorsShowed = false">Read More</i></span><br><br>
           <span>Photos took from
             <a href="https://juiceboxinteractive.com/blog/color/" target="_blank">here</a>.
           </span>
         </div>
-        <div id="decade_colors" *ngIf="!isMobile">
+        <div *ngIf="!colorsShowed">
+          <span>{{ decade.description }}</span><br><br>
+          <span>Photos took from
+            <a href="https://juiceboxinteractive.com/blog/color/" target="_blank">here</a>.
+          </span>
+        </div>
+      </div>
+      <div id="decade_colors">
+        <div
+          id="arrow"
+          [class]="colorsShowed ? 'text-hidden' : 'text-showen'" (click)="this.colorsShowed = true">
+        </div>
+        <div id="decade_color_container" [class]="colorsShowed ? 'colors-showen' : 'colors-hidden'">
           <div
             class="color"
             (mouseover)="show(i)"
@@ -36,28 +47,42 @@
               class="color-value"
               [ngStyle]="{
                 'color': color.getShade(),
-                'background-color': color.hex.toString()
+                'background-color': color.hex.toString(),
+                'display': colorsShowed ? 'flex' : 'none'
               }">
               <span class="text-hidden">{{ decade.names[i] }}</span>
               <span class="text-hidden">{{ color.hex.toString() }}</span>
             </div>
-            <div class="color-shade shade-hidden"></div>
-          </div>
-        </div>
-        <div id="decade_colors" *ngIf="isMobile">
-          <div
-            class="color"
-            [ngStyle]="{
-              'color': color.getShade(),
-              'background-color': color.hex.toString()
-            }"
-            *ngFor="let color of decade.colors; let i = index">
-            <span>{{ decade.names[i] }}</span>
-            <span>{{ color.hex.toString() }}</span>
+            <div
+              [ngStyle]="{
+                'display': colorsShowed ? 'block' : 'none'
+              }"
+              class="color-shade shade-hidden">
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <img src="static/assets/{{ decade.decade }}_trends.jpg">
+    <div id="decade_content" *ngIf="isMobile">
+      <div id="decade_description">
+        <span>{{ decade.description }}</span><br><br>
+        <span>Photos took from
+          <a href="https://juiceboxinteractive.com/blog/color/" target="_blank">here</a>.
+        </span>
+      </div>
+      <div id="decade_colors">
+        <div
+          class="color"
+          [ngStyle]="{
+            'color': color.getShade(),
+            'background-color': color.hex.toString()
+          }"
+          *ngFor="let color of decade.colors; let i = index">
+          <span>{{ decade.names[i] }}</span>
+          <span>{{ color.hex.toString() }}</span>
+        </div>
+      </div>
+    </div>
+    <app-image src="assets/{{ decade.decade }}_trends.jpg" alt="{{ decade.decade }} trends" [style]="{ width: '30vw'}" widthSmall="90vw"></app-image>
   </div>
 </div>

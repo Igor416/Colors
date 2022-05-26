@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { isDevMode as isDevelopmentMode } from '@angular/core';
+
+export var isDevMode = isDevelopmentMode()
 
 import { CookiesService } from '../cookies/cookies.service'
 
@@ -8,7 +11,7 @@ import { CookiesService } from '../cookies/cookies.service'
   providedIn: 'root'
 })
 export class AuthService {
-  api = 'http://colorsapiwebsite.pythonanywhere.com/colors_api/';
+  api = ''
   headers = {
     withCredentials: true,
     headers: new HttpHeaders({
@@ -16,7 +19,15 @@ export class AuthService {
     })
   }
 
-  constructor(private http: HttpClient, private cookies: CookiesService) { }
+  constructor(private http: HttpClient, private cookies: CookiesService) {
+    if (isDevMode) {
+      this.api = 'http://localhost:8000/';
+    }
+    else {
+      this.api = 'http://colorsapiwebsite.pythonanywhere.com/';
+    }
+    this.api += 'colors_api/';
+  }
 
   setAuth(value: boolean, remember_me?: boolean): void {
     this.cookies.set('auth', value.toString(), remember_me ? 3 : 1 / 24)
@@ -28,7 +39,7 @@ export class AuthService {
 
   displayErrors(errors: Array<any>): void {
     for (let err of errors) {
-      alert(`Error: ${err}`)
+      console.log(`Error: ${err}`)
     }
   }
 
