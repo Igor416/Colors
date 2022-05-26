@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { isDevMode as isDevelopmentMode } from '@angular/core';
-
-export var isDevMode = isDevelopmentMode()
 
 import { CookiesService } from '../cookies/cookies.service'
 
@@ -20,13 +17,7 @@ export class AuthService {
   }
 
   constructor(private http: HttpClient, private cookies: CookiesService) {
-    if (isDevMode) {
-      this.api = 'http://localhost:8000/';
-    }
-    else {
-      this.api = 'http://colorsapiwebsite.pythonanywhere.com/';
-    }
-    this.api += 'colors_api/';
+    this.api += 'http://colorsapiwebsite.pythonanywhere.com/colors_api/';
   }
 
   setAuth(value: boolean, remember_me?: boolean): void {

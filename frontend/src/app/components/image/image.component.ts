@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { isDevMode }  from '../../services/auth/auth.service';
-
 @Component({
   selector: 'app-image',
   templateUrl: './image.component.html',
@@ -10,11 +8,7 @@ import { isDevMode }  from '../../services/auth/auth.service';
 export class ImageComponent implements OnInit {
   @Input() src = '';
   @Input() alt = '';
-  @Input() style!: Style;/* = {
-    width: '0vw',
-    border: '0px',
-    'border-radius': '0%',
-  };*/
+  @Input() style!: Style;
   @Input() widthSmall = '';
 
   isMobile: boolean = false;
@@ -24,9 +18,7 @@ export class ImageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!isDevMode) {
-      this.src = 'static/' + this.src;
-    }
+    this.src = 'static/' + this.src;
     if (this.isMobile) {
       this.style.width = this.widthSmall;
     }
