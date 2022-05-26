@@ -1,1 +1,120 @@
-body{width:100%;height:100%;overflow-x:hidden;background:linear-gradient(-45deg,#ff91bb,#ff8fd4,#68bbb8,#68b3bb);background-size:400% 400%;animation:gradient 20s ease infinite}@keyframes gradient{0%{background-position:0 50%}50%{background-position:100% 50%}to{background-position:0 50%}}.bg{animation:slide 8s ease-in-out infinite alternate;background-image:linear-gradient(-60deg,#e616e9 33%,#e96316 0,#e96316 66%,#16e9e6 0);bottom:0;left:-50%;opacity:.2;position:fixed;right:-50%;top:0;z-index:-1}.bg1{animation-direction:alternate-reverse;animation-duration:9s}.bg2{animation-duration:10s}.bg3{animation-direction:alternate-reverse;animation-duration:11s}@keyframes slide{0%{transform:translateX(-25%)}to{transform:translateX(25%)}}.bg-circle{z-index:-1;width:10vw;height:10vw;border-radius:50%;position:absolute;animation:ripple 5s infinite}.bg-circle1{background-color:#ff41f1;width:13vw;height:13vw;left:2%;bottom:13%;animation-duration:5s}.bg-circle2{background-color:#40efff;width:17vw;height:17vw;right:32%;bottom:10%;animation-duration:4s}.bg-circle3{background-color:#ecff41;width:23vw;height:23vw;right:12%;top:7%;animation-duration:3s}.bg-circle4{background-color:#b758ff;width:30vw;height:30vw;left:22%;top:13%;animation-duration:3.5s}@keyframes ripple{0%{opacity:0;transform:scale(1)}50%{opacity:.4;transform:scale(1)}to{opacity:0;transform:scale(1.5)}}
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(-45deg, #ff91bb, #ff8fd4, #68bbb8, #68b3bb);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  to {
+    background-position: 0 50%
+  }
+}
+
+.bg {
+  animation: slide 8s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #e616e9 33%, #e96316 0, #e96316 66%, #16e9e6 0);
+  bottom: 0;
+  left: -50%;
+  opacity: .2;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1
+}
+
+.bg1 {
+  animation-direction: alternate-reverse;
+  animation-duration: 9s
+}
+
+.bg2 {
+  animation-duration: 10s
+}
+
+.bg3 {
+  animation-direction: alternate-reverse;
+  animation-duration: 11s
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%)
+  }
+
+  to {
+    transform: translateX(25%)
+  }
+}
+
+.bg-circle {
+  z-index: -1;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  position: absolute;
+  animation: ripple 5s infinite
+}
+
+.bg-circle1 {
+  background-color: #ff41f1;
+  width: 13vw;
+  height: 13vw;
+  left: 2%;
+  bottom: 13%;
+  animation-duration: 5s
+}
+
+.bg-circle2 {
+  background-color: #40efff;
+  width: 17vw;
+  height: 17vw;
+  right: 32%;
+  bottom: 10%;
+  animation-duration: 4s
+}
+
+.bg-circle3 {
+  background-color: #ecff41;
+  width: 23vw;
+  height: 23vw;
+  right: 12%;
+  top: 7%;
+  animation-duration: 3s
+}
+
+.bg-circle4 {
+  background-color: #b758ff;
+  width: 30vw;
+  height: 30vw;
+  left: 22%;
+  top: 13%;
+  animation-duration: 3.5s
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0;
+    transform: scale(1)
+  }
+
+  50% {
+    opacity: .4;
+    transform: scale(1)
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.5)
+  }
+}
